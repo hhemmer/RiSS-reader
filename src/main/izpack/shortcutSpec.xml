@@ -1,0 +1,20 @@
+<izpack:shortcuts version="5.0"
+                  xmlns:izpack="http://izpack.org/schema/shortcuts"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://izpack.org/schema/shortcuts http://izpack.org/schema/5.0/izpack-shortcuts-5.0.xsd">
+    <skipIfNotSupported />
+    <programGroup defaultName="RiSS" location="applications"/>
+    <shortcut
+        name = "Read news simply with RISS"
+        target = "$INSTALL_PATH/start.sh"
+        commandLine = ""
+        workingDirectory= "$INSTALL_PATH"
+        description="Click to start getting updated"
+        iconIndex="0"
+        initialState="noShow"
+        programGroup="yes"
+        desktop="yes"
+        applications="yes"
+        startMenu="yes"
+        startup="yes"/>
+</izpack:shortcuts>

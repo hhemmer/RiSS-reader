@@ -1,0 +1,66 @@
+<izpack:installation version="5.0"
+                     xmlns:izpack           ="http://izpack.org/schema/installation"
+                     xmlns:xsi              ="http://www.w3.org/2001/XMLSchema-instance"
+                     xsi:schemaLocation     ="http://izpack.org/schema/installation http://izpack.org/schema/5.0/izpack-installation-5.0.xsd">
+   
+    <variables>
+        <variable name="RESOURCEROOT" value="src/main/izpack"/>
+    </variables>
+
+    <info>
+        <appname>RISS - Read it simple, stupid!</appname>
+        <appversion>1.0</appversion>
+        <authors>
+            <author name="Helge Hemmer" email="info@hemmer.it" />
+        </authors>
+        <url>http://www.hemmer.it</url>
+        <javaversion>1.8</javaversion>
+        <requiresjdk>yes</requiresjdk>
+    </info>
+
+    <logging>
+        <log-file pattern="${logging.file}" append="true" level="debug" />
+    </logging>
+
+    <guiprefs width="800" height="600" resizable="yes">
+        <!--
+        <laf name="substance">
+        <os family="windows" />
+        </laf>
+        <laf name="substance">
+        <os family="mac" />
+        <param name="variant" value="mist-aqua" />
+        </laf>
+        -->
+    </guiprefs>
+
+    <locale>
+        <langpack iso3="eng" />
+    </locale>
+
+    <guiprefs>
+      <modifier key="showDebugWindow" value="true"/>
+    </guiprefs>
+
+    <panels>
+        <!-- panel classname="HTMLInfoPanel" id="dependencies" /-->
+        <panel classname="TargetPanel" id="targetPanel"/>        
+        <panel classname="InstallPanel" id="installPanel"/>
+        <panel classname="ShortcutPanel"/>        
+        <panel classname="FinishPanel" id="finishPanel"/>
+    </panels>
+
+    <resources>
+        <res src="../../src/main/izpack/shortcutSpec.xml" id="shortcutSpec.xml"/>
+    </resources>
+
+    <packs>
+        <pack name="Core" required="yes">
+            <description>Core installation files</description>
+            <file src="../riss-RSS-reader.jar" targetdir="$INSTALL_PATH/" />
+            <file src="app/start.sh" targetdir="$INSTALL_PATH" />
+            <file src="app/start.bat" targetdir="$INSTALL_PATH" />
+        </pack>
+    </packs>
+
+</izpack:installation>

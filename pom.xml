@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>org.hemmerit.riss</groupId>
+  <artifactId>riss</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+  <name>RiSS</name>
+
+  <properties>
+    <info.appName>RiSS</info.appName>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+  </properties>
+
+  <dependencies>
+  <dependency>
+     <groupId>org.codehaus.izpack</groupId>
+     <artifactId>izpack-maven-plugin</artifactId>
+     <version>5.0.0</version>
+	 <exclusions>
+		<exclusion>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</exclusion>
+		<exclusion>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-nop</artifactId>
+		</exclusion>
+		<exclusion>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-jdk14</artifactId>
+		</exclusion>
+	</exclusions> 
+    </dependency>
+    </dependencies>
+
+  <build>
+    <finalName>riss-RSS-reader</finalName>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3</version>
+        <configuration>
+          <archive>
+              <manifest>
+                <addClasspath>true</addClasspath>
+                <mainClass>org.hemmerit.riss.app.RissMain</mainClass>
+                <classpathLayoutType>repository</classpathLayoutType>
+              </manifest>
+            </archive>
+        </configuration>
+      </plugin>
+      <plugin>
+            <groupId>org.codehaus.izpack</groupId>
+            <artifactId>izpack-maven-plugin</artifactId>
+            <version>5.0.0</version>
+            <extensions>true</extensions>
+            <executions>
+                <execution>
+                  <phase>install</phase>
+                  <goals>
+                    <goal>izpack</goal>
+                  </goals>
+                <configuration>
+                    <baseDir>${basedir}/target/staging</baseDir>
+                    <outputDirectory>${basedir}/target</outputDirectory>
+                    <finalName>riss-installer</finalName>
+                    <classifier>-exe</classifier>
+                    <izpackBasedir>${basedir}/target/staging</izpackBasedir>
+                </configuration>
+                </execution>
+            </executions>
+        </plugin>
+        
+        <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.0.2</version>
+            <executions>
+              <execution>
+                <id>copy-resources</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>copy-resources</goal>
+                </goals>
+                <configuration>
+                  <outputDirectory>${basedir}/target/staging/app</outputDirectory>
+                  <resources>     
+                    <resource>
+                      <directory>${basedir}/src/main/izpack</directory>
+                      <includes>
+                          <include>start.sh</include>
+                          <include>start.bat</include>
+                      </includes>
+                      <filtering>true</filtering>
+                    </resource>
+                  </resources>              
+                </configuration>            
+              </execution>
+            </executions>
+      </plugin>
+     
+    </plugins>
+  </build>
+
+</project>

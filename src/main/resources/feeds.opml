@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<opml version="1.0"><head><title>Read it simple, stupid!</title></head><body>
+<outline type="rss" title="News" text="News" xmlUrl="http://mag.shock2.info/feed/" htmlUrl="http://mag.shock2.info/">
+    <outline type="rss" title="Tagesschau" text="Tagesschau" xmlUrl="https://www.tagesschau.de/xml/atom/" htmlUrl="https://www.tagesschau.de/"/>
+    <outline type="rss" title="Spiegel online" text="Spiegel online" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" htmlUrl="https://www.spiegel.de/"/>
+</outline>
+<outline type="rss" title="Games" text="Games" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" htmlUrl="https://www.spiegel.de/">
+    <outline type="rss" title="Gamersglobal" text="Gamersglobal" xmlUrl="https://www.gamersglobal.de/feeds/all" htmlUrl="https://www.gamersglobal.de/feeds/all"/>
+</outline>
+<outline type="rss" title="Tech" text="Tech" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" htmlUrl="https://www.spiegel.de/">
+    <outline type="rss" title="heise" text="heise" xmlUrl="https://www.heise.de/newsticker/heise-atom.xml" htmlUrl="https://www.heise.de/newsticker/"/>
+    <outline type="rss" title="Caschy" text="Caschy" xmlUrl="http://feeds2.feedburner.com/stadt-bremerhaven/dqXM" htmlUrl="https://stadt-bremerhaven.de/"/>
+    <outline type="rss" title="Golem" text="Golem" xmlUrl="https://rss.golem.de/rss.php?feed=ATOM1.0" htmlUrl="https://www.golem.de/"/>
+    <outline type="rss" title="Jaxenter" text="Jaxenter" xmlUrl="https://jaxenter.com/feed" htmlUrl="https://jaxenter.com/"/>
+</outline>
+<outline type="rss" title="Deals" text="Deals" xmlUrl="https://www.spiegel.de/schlagzeilen/index.rss" htmlUrl="https://www.spiegel.de/">
+    <outline type="rss" title="MyDeals News" text="MyDealz News" xmlUrl="https://www.mydealz.de/rss/alle" htmlUrl="https://www.mydealz.de/"/>
+    <outline type="rss" title="MyDeals Highlights" text="MyDeals Highlights" xmlUrl="https://www.mydealz.de/rss" htmlUrl="https://www.mydealz.de/"/>
+</outline>
+</body></opml>

@@ -1,0 +1,3 @@
+RiSS (Read it simple, stupid) is named after the famous KISS (Keep it simple, stupid!) acronym.
+In this context it means that the UI is reduced to the minimum, presenting the news feeds and its entries to quickly get an overview and click the article of choice.
+That feature was originally implemented very smoothly in Firefox browser but was removed since it was too complex to maintain as stated by Mozilla (due to the different flavors of RSS and Atom type of feeds that is indeed true).
